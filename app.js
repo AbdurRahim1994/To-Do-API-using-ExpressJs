@@ -12,12 +12,16 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
+const cors = require('cors');
 
 // Security Middleware Implement
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 app.use(morgan());
 app.use(cookieParser())
+app.use(helmet());
+app.use(cors());
 
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: false }))
